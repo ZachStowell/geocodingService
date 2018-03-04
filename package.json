@@ -1,0 +1,19 @@
+{
+  "name": "geocoderservice",
+  "version": "1.0.0",
+  "description": "A service for Geocoding",
+  "main": "index.js",
+  "scripts": {
+    "start": "micro",
+    "dev": "micro-dev"
+  },
+  "author": "Zach Stowell",
+  "license": "ISC",
+  "dependencies": {
+    "micro": "^9.1.0",
+    "node-geocoder": "^3.22.0"
+  },
+  "devDependencies": {
+    "micro-dev": "^2.2.0"
+  }
+}
