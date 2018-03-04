@@ -1,4 +1,5 @@
 const { json } = require('micro');
+const cors = require('micro-cors')();
 const NodeGeocoder = require('node-geocoder');
 const { API_KEY } = process.env;
 
@@ -11,7 +12,7 @@ const options = {
 
 var geocoder = NodeGeocoder(options);
 
-module.exports = async (req, res) => {
+const service = async (req, res) => {
   try {
     const data = await json(req);
     const result = await geocoder.geocode(data.address);
@@ -28,3 +29,5 @@ module.exports = async (req, res) => {
     res.end('error');
   }
 };
+
+module.exports = cors(service);
